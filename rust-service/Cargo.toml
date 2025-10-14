@@ -1,0 +1,18 @@
+[package]
+name = "rust-service"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Axum web framework
+axum = "0.8.6"
+# Tokio (async runtime)
+tokio = { version = "1.48.0", features = ["full"] }
+# Serde for JSON
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.145"
+# Tracing for logging
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+# dotenvy để đọc biến môi trường từ .env (cho dev local)
+dotenvy = "0.15.7"
