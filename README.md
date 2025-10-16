@@ -34,7 +34,29 @@ Ensure you have the following tools installed locally:
 
 ---
 
-## 📦 Local Setup and Deployment
+## 🐳 Quick Start with Docker Compose
+
+The fastest way to run all services locally:
+
+```bash
+# Start all services
+make up
+
+# Or using docker-compose directly
+docker-compose up -d
+
+# Test services
+make test-services
+
+# View logs
+make logs
+```
+
+📖 **See [DOCKER_COMPOSE.md](./DOCKER_COMPOSE.md) for detailed Docker Compose documentation.**
+
+---
+
+## 📦 Kubernetes Deployment
 
 This workflow uses **Kind** for local deployment. Images are built and loaded directly into the cluster, avoiding an external registry.
 

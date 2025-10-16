@@ -12,11 +12,12 @@ COPY Cargo.toml Cargo.lock ./
 RUN mkdir src && \
     echo "fn main() {println!(\"caching\");}" > src/main.rs && \
     cargo build --release && \
-    rm -rf src/
+    rm -rf src
 
 COPY src ./src
 
-RUN cargo build --release
+# Touch the source to force rebuild
+RUN touch src/main.rs && cargo build --release
 
 # --- STAGE 2: Final Image ---
 FROM alpine:3.19
